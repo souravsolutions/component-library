@@ -1,26 +1,17 @@
 #!/usr/bin/env node
 
-import fs from "fs"
-import fetch from "node-fetch"
-async function run() {
+import { Command } from "commander"
+import { add } from "./commands/add"
 
-  const res = await fetch(
-    "http://localhost:3000/api/registry/button"
-  )
+const program = new Command()
 
-  const data = await res.json()
+program
+  .name("nativecn")
+  .description("React Native component CLI")
 
-  const file = data.files[0]
+program
+  .command("add <component>")
+  .description("add component to project")
+  .action(add)
 
-  fs.mkdirSync("components/ui", { recursive: true })
-
-  fs.writeFileSync(
-    file.path,
-    file.content
-  )
-
-  console.log("Button installed")
-
-}
-
-run()
+program.parse()

@@ -1,0 +1,10 @@
+{
+  "name": "button",
+  "type": "ui",
+  "dependencies": [
+    "nativewind"
+  ],
+  "files": [
+    "button.tsx"
+  ]
+}
