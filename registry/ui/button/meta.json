@@ -1,6 +1,6 @@
 {
   "name": "button",
   "type": "ui",
-  "dependencies": ["nativewind"],
+  "dependencies": [],
   "files": ["button.tsx"]
 }

@@ -1,11 +1,9 @@
 import { NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
-
 export async function POST(req: Request) {
   const body = await req.json();
   const component = body.name;
-
   if (!component) {
     return NextResponse.json(
       { error: "Missing component name" },
@@ -25,7 +23,6 @@ export async function POST(req: Request) {
       { status: 404 },
     );
   }
-
   const meta = JSON.parse(fs.readFileSync(metaPath, "utf8"));
   const files = meta.files.map((file: string) => {
     const filePath = path.join(componentPath, file);
