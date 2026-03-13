@@ -1,5 +1,3 @@
 {
-  "components": [
-    "button",
-  ]
+  "components": ["ui/button", "ui/card"]
 }

@@ -3,10 +3,7 @@ export async function fetchRegistry(name: string) {
     `http://localhost:3000/api/registry/component`,
     {
       body: JSON.stringify({ name }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-      method: "GET",
+      method: "POST"
     }
   )
 

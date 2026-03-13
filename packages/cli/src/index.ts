@@ -1,10 +1,8 @@
 #!/usr/bin/env node
 
 import { Command } from "commander"
-import { add } from "./commands/add"
-
+import { add } from "./commands/add.ts"
 const program = new Command()
-
 program
   .name("nativecn")
   .description("React Native component CLI")
